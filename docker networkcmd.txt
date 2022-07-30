@@ -1,0 +1,16 @@
+docker create network:
+docker network create (nm)
+
+docker network ls -> list network types
+
+docker network inspect(nm) -> information about particular network 
+
+see the hostnames inside container
+cat /etc/hosts
+
+docker run -d -it --name (cn) --network=host ubuntu
+
+
+outside the container access network port mapping
+
+docker run -d -it --name (cn) -p 8080:80 httpd

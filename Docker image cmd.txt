@@ -1,0 +1,114 @@
+
+
+	1. Docker image search cmd:
+	
+		docker search (image name)
+	
+	2. docker image install cmd:
+	
+		docker pull (image name ) -> if you want to download specific version you want to mention that version
+
+		ex: docker pull ubuntu: (version) -> you must give double quotes after mention the version
+		
+	3.list docker image cmd:
+	
+		docker images
+		
+	4. docker run give port in cmd:
+	
+		docker run -d -name (container name) -p 81:80 (image name)
+		
+	5. get complete docker image infomation cmd:
+	
+		docker inspect (give Reponame with tag or image id)
+		
+		ex: docker inspect learnitguide/busapp:latest
+		
+			or
+			
+		ex: docker inspect 5274b804d827
+		
+	6. docker image history cmd:
+	
+		docker history (image name with version)
+	
+	7. docker image backup to local system cmd:
+	
+		docker save (image id) > (image name)-(file name).tar
+		
+		
+	8. docker image restore to local system cmd:
+	
+		docker load -i > (image name)-(file name).tar
+		
+	9. docker delete image cmd:
+	
+		delete all docker images:
+		
+		docker rmi $(docker images -q)
+	
+		docker rmi (image id) -> if you want to delete docker image
+		you must stop docker container and delete docker container after that you can delete the docker image
+		
+	10. if you want to delete all image to use this cmd:
+
+		docker rmi $(docker images -a -q)
+		
+	How to create docker image using container:
+	
+		pull docker image
+		
+			docker pull (image name)
+			
+		docker run 
+		 
+			docker run -d -it --name ubuntu1 ubuntu:latest /bin/sh
+			
+		docker login
+		
+			docker exec -it ubuntu2 /bin/sh
+	
+		pwd
+		ls
+		create directory
+			 mkdir thiru
+			 
+		create dummy file
+		
+			touch test
+			ls
+			
+			apt-get update 
+			apt-get install nmap
+			apt-get install curl
+			
+			docker commit (container id)
+			
+			create tag:
+			
+			docker commit 96ec0c18c0c1 cusomimage:2.1
+			
+			run custom image 
+			
+	How to push created docker image to docker registry or docker hub
+	
+			docker tag(image name:version) (dockerhub username)/(image name:version)
+	
+			docker push (image name with tag)
+			
+			docker login 
+			enter username and password
+				
+			rename custom image tag 
+			
+				docker tag (old image name with tag) (rename image name tag)
+				
+				docker push (image name with tag id)
+				
+				docker info -> it is showing which registry your are regiter currently.
+			 
+		total html file empty cmd:
+		> (filename)
+		
+		show ipaddress outside container
+		netstat -lnt

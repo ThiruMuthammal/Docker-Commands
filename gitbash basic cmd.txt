@@ -1,0 +1,74 @@
+
+gitbash basic cmd:
+
+pwd  -> present working directory
+
+cd /d -> change current directory
+
+ls -> list all files and folders current directory
+
+cd .. -> goto previous directory
+
+cd . -> present directory
+./ -> exe current directory files
+
+mkdir folder name -> create new folder
+
+rmdir folder name  -> remove folder
+
+folder inside a folder delete cmd :
+
+rm -r folder name
+
+echo hello >> file name -> create new file 
+
+read that file:
+cat file name 
+
+clear
+
+copy file one folder to another folder:
+
+cp /home/thriumuthammal/thiru/thirum.txt /home/thriumuthammal/moorthy
+
+or
+rsync /home/wardah/dir1/file1.txt /home/wardah/dir2/text_file.txt
+
+copy multiple file one folder to another folder:
+
+cd /home/wardah/temp
+
+ cp text_file1.txt text_file2.txt text_file3.txt /home/wardah/temp2
+
+or
+
+cp /home/wardah/temp/* /home/wardah/temp2
+
+or
+
+rsync -a /home/wardah/dir1/ /home/wardah/dir2
+
+
+git rest:
+
+git reset commitid
+
+ cp rm currentdirectory/ newfoldername
+ 
+git reset --hard commitid -> data also removed
+
+git  reset --soft(optional) commitid
+
+show user git 
+
+git config --list 
+
+vi ~/.gitconfig
+
+git config user.name ""
+git config user.email ""
+
+
+
+
+

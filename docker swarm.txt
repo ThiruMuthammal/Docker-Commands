@@ -1,0 +1,10 @@
+docker swarm initialize cmd:
+
+docker swarm init 
+
+
+linux cmd 
+
+uname -a -> os name info
+
+lsb_release -a ->complete info 

@@ -1,0 +1,134 @@
+1. pwd -> Present working directory or print working directory
+
+2. cd -> change directory
+
+        cd -> space directory name or folder name and press tab it will goes to that directory.
+        cd .. -> outside corrent directory
+        cd ~ -> jump to the home directory
+        cd . -> current directory
+        ls -> list the all file inside directory or folder
+        ls -a -> list the all files and hide file also
+3. mkdir -> create a new folder
+        eg: mkdir thiru (folder name) -> thiru is a folder name
+4. rmdir -> remove directory -> it only delete the empty directory
+                or
+        rm -d -> (folder name)
+        rm -> remove -d -> directory
+
+        rm -r (directory and files) -> it deletes both directory and files
+        rm -r -v (folder name) -> -r remove entire directory -v remove sub directories and files
+        rm -d -i thiru -> The -i option displays a prompt asking you to confirm directory removal. Type Y and press Enter to confirm.
+        rmdir -v thiru* -> The rmdir command allows you to remove multiple directories with similar names using wildcards
+                eg: thiru thiru1 thiru2
+
+                eg: rm -d thiru
+                eg: rmdir thiru (folder name) -> thiru is a folder name
+
+5. clear -> clear the terminal
+
+6. gedit -> it will open the notepad
+        configure gedit
+                sudo -> super user do
+                sudo apt-get update
+				  sudo apt-get install gedit
+
+7. touch -> create new file
+        eg: touch thiru -> thiru is a file name
+
+8. cp -> copy the file
+
+        eg: cp (file name) /home/thriumuthammal/ -> press enter
+9. rename file
+        eg: mv (old filename) (new filename)
+
+10. rename folder or directory
+        eg: mv (old dir name) (new dir name)
+
+11. cat -> read the text file
+
+        eg: cat thiru
+
+12. echo whatever you want to type it is display in terminal
+
+        eg: echo hi thiru - press enter
+        hi thiru
+13. cat > (filename) override the file
+
+        eg: cat > thiru -> press enter
+
+        how are you thiru
+        hello Ctrl+c same line it is save only save for first line dosent save hello
+		if you override multiple line
+
+        thiru
+        hi
+        how
+        are
+        you
+        ctrl+c it is save all value because you are save the file new line
+
+14. cat >> -> merge the text
+
+        eg: cat >> thiru
+
+        hi here is new line added -> press enter
+        Ctlr+c save the file thiru -> already we had thriu file and inside some text it is also added that same file
+
+15. mv -> move file
+
+        eg: mv thiru /home/thriumoorthy/. -> dot means current directory
+
+16. df -m -> it is list the all mount directories
+
+17. unzip -> unzip the zip files
+
+        eg: unzip thiru.zip
+        eg: zip moorthy thiru
+
+18. unzip tar files
+
+        eg: tar -xvf thiru.tar.xz
+        eg: tar -zcvf file.tar.gz thiru
+19. uname -> you can know which platform you are usgin
+
+20. uname -a -> full details of linux platform
+
+21. hostname -> you can see ehat is your user name
+
+22. hostname -i -> you can see your ip address
+
+23. man -> using this command if you want to help and doubts you can clear using this cmd
+
+24. who -> it is diaplay username and when you login the details
+
+25. whoami -> is is display username
+
+26. history -> list the history details
+
+26. reset -> reset the terminal
+
+27. ls -R -> show the sub directories
+
+28. mkdir -> one cmd create multiple sub directories
+
+        mkdir -p ~/thiru/moorthy
+        mkdir -p htg/{articles,images,note,done}
+
+
+linux cmd 
+
+uname -a -> os name info
+
+lsb_release -a ->complete info
+
+cat /etc/os-release -> complete info
+
+remove sudo cmd:
+
+sudo usermod -aG docker <username> 
+
+grep docker /etc/group
+
+change name directory:
+
+PS1="thiru>"

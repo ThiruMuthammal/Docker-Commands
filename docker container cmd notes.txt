@@ -1,0 +1,194 @@
+	check docker ip
+	
+	docker inspect --format '{{ .NetworkSettings.IPAddress }}' container_name_or_id
+	
+	check docker server active or not cmd:
+	
+		systemctl status docker
+		
+		install docker:
+		
+		apt-get install docker.io
+		
+	
+	Docker image cmd:
+	
+	1. searech docker image cmd:
+	
+		docker searech (give image name)
+	
+	2. Check if docker image is available or not cmd:
+	
+		docker images
+	
+	3. pull docker images cmd:
+	
+		docker pull (give image name)
+	
+	4. docker disk usage cmd:
+	
+		docker system df
+	
+	Docker Container cmd:
+	
+	1. create new container cmd:
+	
+		docker create -> docker create cmd is only create a new container it dosen't be running state.
+	
+		docker run -> This cmd create a new container and it will be in a running state
+		
+		docker run --name (give container name as your wish ) (give image name -> which image you are using)
+	
+		ex: docker run --name Myapp httpd 
+	
+		-> if execute this cmd it will run foreground you won't run any cmd in this screen.
+	
+		-> again press crl+c it will work, but your container will shutdown.
+	
+		ex: docker run -d --name myapp1 httpd 
+	
+		-> if execute this cmd it will run backround you will run any cmd in this screen.
+	
+	
+	2. If check conainer is running status or not cmd:
+	
+		docker ps -> it is show only running containers list
+	
+		docker ps -a -> it is show all containers list 
+	
+	3. How to login and manage running containers cmd:
+
+		docker exec -it myapp1 /bin/sh  (-it -> intractive terminal)
+		
+		docker exec -it myapp1 -ef ->check processor info particular contaioner
+		
+		docker exec -it myapp1 sleep 4 -> sleep 4 second your conainer
+	
+		bash ->enter 
+	
+	4. check what type of cmd's available in this httpd image 
+	
+		cd /bin -> enter
+		ls -lrt -> enter
+		ls -> enter (list all the cmd's)
+		cd /sbin	
+		ls -lrt
+		ls -> enter (list all the cmd's)
+		
+	5. without login conainer you can perform the tasks cmd:
+			
+		docker exec myapp1 uname -a
+		
+	 you can perform any tasks
+	 
+	 ex: you can create a new directory:
+	 
+		docker exec myapp1 mkdir /tmp/thiru
+		
+		you can list new directory:
+		
+		docker exec myapp1 ls /tmp/
+		
+		show the directory folder
+		
+		login container 
+		cd /tmp
+		ls
+		
+		
+	6. How to copy files local to inside container and outside conainer:
+	
+	
+		touch new_file.txt
+		 ls
+		 sudo docker cp new_file.txt 78dfc3339c3e:new_file.txt
+	
+	Remove file from local system cmd:
+	
+		rm -rf new_file.txt
+		
+	How to copy files container to local system:
+	
+		sudo docker cp 78dfc3339c3e:/tmp/new_file.txt .
+	
+	7.How to stop and start container:
+	
+		docker stop (conainer name)
+		
+		docker start (conainer name)
+		
+		start all docker container:
+		
+		docker restart $(docker ps -a -q)
+		
+		stop all docker conainer:
+		
+		docker kill $(docker ps -q)
+		
+		remove all docker container:
+		
+		docker rm $(docker ps -a -q)
+		
+		docker pause container:
+		
+		 docker pause (container name)
+		 
+		 docker unpause my_container
+
+	
+	8. docker system related cmd's:
+	
+		docker system df -> disk usage info
+		
+		docker stats -> files usage 
+		
+		docker system events
+		
+	9. How to remove all containers or specific containers:
+	
+		docker rmi (image name)
+		
+		docker rm (container name) -> running container you can't delete it will throw error.
+		
+		docker rm -f (conainer name)
+		
+	10. How to check log to the conainer:
+	
+		docker log 
+		
+		docker logs myapp1 
+		
+		docker run -d --name thiru alpine
+		
+		docker run -d -it --name thiru alpine /bin/sh
+		
+		particular stats view cmd:
+		
+		docker stats (conainer name)
+		
+		docker stats --no--stream (conainer name)
+		docker stats --no--stream --all
+		
+		if you want to check what processes running in container using this cmd:
+
+		docker top (conainer name)
+		
+		docker system prune -> delete unused all containers
+		
+		
+		
+	11. if you pull image application using this cmd:
+	
+	
+		docker run -d --name myapp1 httpd 
+		
+		if you pull os using this cmd:
+	
+	
+		docker run -d -it --name myapp1 ubuntu /bin/sh 
+		
+		
+		rename docker container 
+		
+		docker container (container name) (new container name)
+	

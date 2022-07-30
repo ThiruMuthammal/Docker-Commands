@@ -1,0 +1,38 @@
+
+
+  ubuntu server connection string:
+  
+  docker context ls
+  export DOCKER_HOST=unix:///var/run/docker.sock
+  
+  
+  docker local repo directory cmd:
+  
+  \\wsl$
+  
+  docker cpu and memory request and set limit cmd:
+  
+  memory:
+  
+  docker run --memory-reservation=512m -m 1024m -d --name myapp1 httpd
+  
+  cpu:
+  
+  docker run cpus=1.2 -d --name myapp2 httpd
+  
+  cpu shares:
+  
+  docker run --cpu-shares=1000 -cpus=1 -d --name myapp4 httpd
+  
+  
+  internal structure of docker root directory:
+  
+   sudo ls -la /var/lib/docker
+   
+   docker utilization new directory:
+   
+   ps aux | grep -i docker | grep -v grep
+   
+   find docker root directory:
+   
+   sudo docker info | grep -i root

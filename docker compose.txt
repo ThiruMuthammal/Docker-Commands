@@ -1,0 +1,35 @@
+docker compose file search ubuntu cmd:
+
+sudo apt-cache search docker-compose
+
+install docker-compose:
+
+sudo apt-get install docker-compose
+
+check docker-compose version:
+
+docker-compose version:
+git clone code
+
+vim  docker-compose.yaml
+
+rename docker-compose file:
+
+mv -f docker-compose.yaml myapp.yaml
+
+docker-compose -f myapp.yaml up -> run on foreground
+
+ctrl+c the application will stop
+
+docker-compose -f myapp.yaml up -d -> run on background
+
+particular docker compose file image see cmd:
+
+docker-compose -f myapp.yaml images -> -f flag to specify the location of a Compose configuration file
+
+docker-compose -f myapp.yaml config -> if you have error config and it will through error
+
+docker-compose -f myapp.yaml stop mongo -> particular container 
+
+
+
